@@ -13,10 +13,43 @@ alerting:
       - "alertmanager:9093"
 
 scrape_configs:
-  - job_name: 'node'
+  - job_name: 'prometheus'
     scrape_interval: 5s
     static_configs:
-         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100']
+         - targets: ['localhost:9090']
+
+  - job_name: 'blackbox-exporter'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - https://www.robustperception.io/
+        - http://prometheus.io/blog
+        - http://yourdomain/usage-api/health
+        - http://yourdomain/google-apm/health
+        - https://google.com
+        - https://www.telegraph.co.uk
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      # - target_label: __address__
+      #   replacement: lo:9115
+    dns_sd_configs:
+    - names:
+      - 'tasks.blackbox-exporter'
+      type: 'A'
+      port: 9115
+
+  - job_name: 'cadvisor'
+    dns_sd_configs:
+    - names:
+      - 'tasks.cadvisor'
+      type: 'A'
+      port: 8080
+
   - job_name: 'netdata'
     metrics_path: '/api/v1/allmetrics'
     params:
