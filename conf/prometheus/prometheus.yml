@@ -26,8 +26,8 @@ scrape_configs:
       - targets:
         - https://www.robustperception.io/
         - http://prometheus.io/blog
-        - http://yourdomain/usage-api/health
-        - http://yourdomain/google-apm/health
+        - http://www.devops-training.ml/
+        - http://emaster.cloud
         - https://google.com
         - https://www.telegraph.co.uk
     relabel_configs:
@@ -57,4 +57,4 @@ scrape_configs:
     honor_labels: true
     scrape_interval: 5s
     static_configs:
-         - targets: ['YOUR_NETDATA_IP:19999']
+      - targets: ['YOUR_NETDATA_IP:19999']
