@@ -21,8 +21,8 @@ services:
       - /proc:/usr/proc
       - /sys:/usr/sys
       - /:/rootfs
-    deploy:
-      mode: global
+    # deploy:
+    #   mode: global
     networks:
       - backend
     ports:
@@ -49,8 +49,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - backend
-    deploy:
-      mode: global
+    # deploy:
+    #   mode: global
     ports:
       - 8080:8080
 
@@ -75,3 +75,4 @@ networks:
 volumes:
     prometheus_data:
     grafana_data:
+

@@ -24,12 +24,13 @@ scrape_configs:
       module: [http_2xx]
     static_configs:
       - targets:
-        - https://www.robustperception.io/
-        - http://prometheus.io/blog
-        - http://www.devops-training.ml/
-        - http://emaster.cloud
-        - https://google.com
-        - https://www.telegraph.co.uk
+        - www.robustperception.io
+        - www.prometheus.io
+        - www.devops-training.ml
+        - www.emaster.cloud
+        - www.google.com
+        - www.telegraph.co.uk
+        - prometheus.io
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
