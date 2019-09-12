@@ -28,4 +28,4 @@ groups:
       severity: "critical"
     annotations:
       summary: "Endpoint {{ $labels.instance }} probe error"
-      description: "{{ $labels.instance }} of job {{ $labels.job }} has some probe fails."
+      description: "{{ $labels.instance }} of job {{ $labels.job }} have failed for more than 15s."
