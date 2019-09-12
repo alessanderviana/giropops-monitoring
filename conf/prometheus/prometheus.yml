@@ -16,7 +16,7 @@ scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 5s
     static_configs:
-         - targets: ['localhost:9090']
+      - targets: ['localhost:9090']
 
   - job_name: 'blackbox-exporter'
     metrics_path: /probe
@@ -24,88 +24,66 @@ scrape_configs:
       module: [http_2xx]
     static_configs:
       - targets:
-        # - http://metabase.campuslab.com.br
-        - http://srp.homolog.equipe.ninja/health
-        - http://v1.primeirafase.saraivaaprova.com.br/users/sign_in
-        - http://stg.traefik.aws.appprova.com.br/ping
-        - http://stg.traefik.gcp.campuslab.com.br/ping
-        - http://api.jeyloo.somoseditoras.com.br/api/health
-        - http://stg.traefik.aws.saraivaeducacao.com.br/ping
-        - http://any.nivelamento.saraivaeducacao.com.br
-        - http://any.pf.homolog.equipe.ninja
-        - http://ingressante.solucoes.solucoesuniversitarias.com.br.
-        - http://any.stg.solucoesuniversitarias.com.br
-        - http://homolog.campuslab.com.br/api/health
-        - http://stg.warden.saraivaeducacao.com.br/api/health
-        - http://sputnik.saraivaeducacao.com.br/v1/health-check
-        - http://stg.campuslab.com.br/api/health
-        - http://stg.saraivaaprova.com.br
-        - http://stg.api.alliance.saraivaeducacao.com.br/api/v1/health
-        - http://skuld.somoseditoras.com.br
-        - http://traefik.aws.saraivaeducacao.com.br/ping
-        - http://warden.saraivaeducacao.com.br/api/health
-        - http://srp.somoseditoras.com.br/health
-        - http://stg.grafana.saraivaeducacao.com.br
-        - http://stg.paineljur.com.br
-        - http://stg.jurisprudencias.saraivaconecta.com.br/public/liveness
-        - http://cms.campuslab.com.br
-        - http://traefik.aws.appprova.com.br/ping
-        - http://cmscampuslab.staging.equipe.ninja
-        - http://stg.apppay.saraivaeducacao.com.br/api/health
-        - http://jurisprudencias.saraivaconecta.com.br/public/liveness
-        - http://stg.blog.saraivaeducacao.com.br
-        - http://gcp.skuld.somoseditoras.com.br
-        - http://concluinte.solucoes.solucoesuniversitarias.com.br.
-        - http://oab.saraivaaprova.com.br
-        - http://traefik.gcp.campuslab.com.br/ping
-        - http://app.homolog.saraivaaprova.com.br
-        - http://campuslab.saraivaaprova.com.br
-        - http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- httpcce- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2htcom- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- http_2- httpcce- http_2- http_2htt.homolog.equipe.ninja/ping
-        - http://apppay.saraivaeducacao.com.br/api/health
-        - http://sputnik.stg.saraivaeducacao.com.br/v1/health-check
-        - http://api.skuld.homolog.equipe.ninja
-        - http://campuslab.com.br/api/health
-        - http://any.su.homolog.equipe.ninja
-        - http://blog.saraivaeducacao.com.br
-        - http://api.jeyloo.homolog.equipe.ninja/api/health
-        - http://skuld.homolog.equipe.ninja
-        - http://any.enade.saraivaeducacao.com.br
-        - http://any.pf.homolog.saraivaaprova.com.br
-        - http://api.saraivadigital.com.br/ping
-        - http://solucoes.prod.con.appprova.com.br/users/sign_in
-        - http://saraivaaprova.com.br
-        - http://metabase.campuslab.com.br
-        - http://srp.homolog.equipe.ninja/health
-        - http://v1.primeirafase.saraiva- http://v1.primeirafase.saraiva- http://v1.primeirafas.a- http://v1.primeirafase.saraiva- http://v1.primeirafase.saraivab.com.br/ping
-        - http://api.jeyloo.somoseditoras.com.br/api/health
-        - http://stg.t- http://stg.t- http://stg.t- http_2- http://stg.t- http://stg.t- http  - http://stg.t- http://stg.t- http://stg.t- http_2x  - http://stg.t- http://stg.t- http_2.com.br.
-        - http://any.stg.solucoesuniversitarias.co- http://any.stg.solucoesuniversitarias.cohtapi/he- http://any.stg.solucoesuniversitarias.co- httpaeducacao- http://any.stg.solucoesuniversitarias.co- http://any.stg.sol.b- http://any.stg.solucoesuniversitarias.costg- http://any.stg.solucoesuniversitarias.co- http_ttp- http://any.stg.solucoesuniversitarias.co- http_2xx//stg.api.alliance.saraivaeducacao.com.br/api/v1/health
-        - http://skuld.somoseditoras.com.br
-        - http://traefik.aws.saraivaeducacao.com.br/ping
-        - http://warden.sa- http://warden.sa- http://warden.sa- http://warsed- http://warden.sa- http://warden.sa- http://warden.sa- http://warsed- http://warden.sa- http://warden.sa- http://warden.sa- http://warsed- http://warden.sa- http://warden.sa- http://warden.sa- http_2xx ess  Logs
-        - http://traefik.aws.appprova.com.br/ping
-        - http://cmscampuslab.staging.equipe.ninja
-        - http://stg.apppay.saraivaeducacao.com.br/api/health
-        - http://stg.blog.saraivaeducacao.com.br
-        - http://jurisprudencias.saraivaconecta.com.br/public/liveness
-        - http://gcp.skuld.somoseditoras.com.br
-        - http://concluinte.solucoes.solucoesuniversitarias.com.br.
-        - http://oab.saraivaaprova.com.br
-        - http://app.homolog.saraivaaprova.com.br
-        - http://campuslab.saraivaaprova.com.br
-        - http://api.alliance.saraivaeducacao.com.br/api/v1/health
-        - http://grafana.saraivaeducacao.com.br
-        - http://paineljur.com.br
-        - http://api.homolog.equipe.ninja/ping
-        - http://sputnik.stg.saraivaeducacao.com.br/v1/health-check
-        - http://api.skuld.homolog.equipe.ninja
+          - http://api.alliance.saraivaeducacao.com.br/api/v1/health # alliance-prod
+          - http://api.saraivadigital.com.br/ping # api-production
+          - http://apppay.saraivaeducacao.com.br/api/health # app-pay-prod
+          - http://blog.saraivaeducacao.com.br # blog-saraivaeducacao-prod
+          - http://campuslab.com.br/api/health # campus-lab-prod
+          - http://paineljur.com.br
+          - http://cms.campuslab.com.br # cms-campuslab-prod
+          - http://api.jeyloo.somoseditoras.com.br/api/health # jeyloo-back-prod
+          - http://jurisprudencias.saraivaconecta.com.br/public/liveness # jurisprudence-prod
+          - http://metabase.campuslab.com.br # metabase-prod
+          - http://grafana.saraivaeducacao.com.br # monitoring
+          - http://v1.primeirafase.saraivaaprova.com.br/users/sign_in # primeira-fase-prod
+          - http://solucoes.prod.con.appprova.com.br/users/sign_in # primeira-fase-prod, solucoes-prod-ing, solucoes-prod-con
+          - http://oab.saraivaaprova.com.br # primeira-fase-prod
+          - http://campuslab.saraivaaprova.com.br # primeira-fase-prod
+          - http://saraivaaprova.com.br # saraiva-aprova-dashboard-prod
+          - http://skuld.somoseditoras.com.br # skuld-prod
+          - http://gcp.skuld.somoseditoras.com.br # skuld-prod
+          - http://any.enade.saraivaeducacao.com.br # solucoes-prod-con
+          - http://concluinte.solucoes.solucoesuniversitarias.com.br. # solucoes-prod-con
+          - http://any.nivelamento.saraivaeducacao.com.br # solucoes-prod-ing
+          - http://ingressante.solucoes.solucoesuniversitarias.com.br. # solucoes-prod-ing
+          - http://srp.somoseditoras.com.br/health # somos-reverse-proxy-prod
+          - http://sputnik.saraivaeducacao.com.br/v1/health-check # sputnik-prod
+          - http://traefik.aws.appprova.com.br/ping # traefik-prod
+          - http://traefik.aws.saraivaeducacao.com.br/ping # traefik-prod
+          - http://traefik.gcp.campuslab.com.br/ping # traefik-prod
+          - http://warden.saraivaeducacao.com.br/api/health # warden-prod
+          - http://stg.api.alliance.saraivaeducacao.com.br/api/v1/health # alliance-stg
+          - http://api.homolog.equipe.ninja/ping # api-homolog
+          - http://stg.apppay.saraivaeducacao.com.br/api/health # app-pay-stg
+          - http://stg.blog.saraivaeducacao.com.br # blog-saraivaeducacao-stg
+          - http://homolog.campuslab.com.br/api/health # campus-lab-hml
+          - http://stg.campuslab.com.br/api/health # campus-lab-stg
+          - http://stg.paineljur.com.br
+          - http://cmscampuslab.staging.equipe.ninja # cms-campuslab-stg
+          - http://api.jeyloo.homolog.equipe.ninja/api/health # jeyloo-back-stg
+          - http://stg.jurisprudencias.saraivaconecta.com.br/public/liveness # jurisprudence-stg
+          - http://stg.grafana.saraivaeducacao.com.br # monitoring
+          - http://any.pf.homolog.equipe.ninja # primeira-fase-stg
+          - http://any.pf.homolog.saraivaaprova.com.br # primeira-fase-stg
+          - http://app.homolog.saraivaaprova.com.br # primeira-fase-stg
+          - http://stg.saraivaaprova.com.br # saraiva-aprova-dashboard-stg
+          - http://skuld.homolog.equipe.ninja # skuld-stg
+          - http://api.skuld.homolog.equipe.ninja # skuld-stg
+          - http://any.su.homolog.equipe.ninja # solucoes-stg
+          - http://any.stg.solucoesuniversitarias.com.br # solucoes-stg
+          - http://srp.homolog.equipe.ninja/health # somos-reverse-proxy-stg
+          - http://sputnik.stg.saraivaeducacao.com.br/v1/health-check # sputnik-stg
+          - http://stg.traefik.aws.appprova.com.br/ping # traefik-stg
+          - http://stg.traefik.aws.saraivaeducacao.com.br/ping # traefik-stg
+          - http://stg.traefik.gcp.campuslab.com.br/ping # traefik-stg
+          - http://stg.warden.saraivaeducacao.com.br/api/health # warden-stg
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: lo:9115
+        replacement: blackbox-exporter:9115
     dns_sd_configs:
     - names:
       - 'tasks.blackbox-exporter'
