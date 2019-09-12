@@ -20,3 +20,12 @@ groups:
     annotations:
       summary: "Instance {{ $labels.instance }} under high load"
       description: "{{ $labels.instance }} of job {{ $labels.job }} is under high load."
+
+  - alert: end_point_probe
+    expr: probe_success == 0
+    for: 15s
+    labels:
+      severity: "critical"
+    annotations:
+      summary: "Endpoint {{ $labels.instance }} probe error"
+      description: "{{ $labels.instance }} of job {{ $labels.job }} has some probe fails."
