@@ -23,7 +23,7 @@ groups:
 
   - alert: end_point_probe
     expr: probe_success == 0
-    for: 15s
+    for: 20s
     labels:
       severity: "critical"
     annotations:
