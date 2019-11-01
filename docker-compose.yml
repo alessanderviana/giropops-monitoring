@@ -38,16 +38,15 @@ services:
     ports:
       - 9093:9093
 
-  # prometheus-teams:
-  #   image: bzon/prometheus-msteams:v1.1.4
-  #   hostname: '{{.Node.ID}}'
-  #   networks:
-  #     - backend
-  #   environment:
-  #     - TEAMS_INCOMING_WEBHOOK_URL="https://outlook.office.com/webhook/d722f014-f51d-412a-8d33-6ad676145ae2@ddacce4a-f736-45e1-9c8c-efbe236c4706/IncomingWebhook/f22af8fc0baf4e78abf6e8a7895973af/c0de56fe-5b14-4ff5-9925-3e728dd8f1b0"
-  #     - TEAMS_REQUEST_URI=alertmanager
-  #   ports:
-  #     - 2000:2000
+  prom2teams:
+    image: idealista/prom2teams
+    hostname: '{{.Node.ID}}'
+    networks:
+      - backend
+    volumes:
+      - ./conf/prom2teams/config.ini:/opt/prom2teams/config.ini
+    ports:
+      - 8089:8089
 
   cadvisor:
     image: google/cadvisor
