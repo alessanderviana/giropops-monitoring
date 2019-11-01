@@ -8,16 +8,11 @@ route:
   group_wait: 2s
   receiver: 'prometheus-teams'
 
-# https://outlook.office.com/webhook/d722f014-f51d-412a-8d33-6ad676145ae2@ddacce4a-f736-45e1-9c8c-efbe236c4706/IncomingWebhook/f22af8fc0baf4e78abf6e8a7895973af/c0de56fe-5b14-4ff5-9925-3e728dd8f1b0
-
 receivers:
-- name: 'prometheus-teams'
+- name: 'prom2teams'
   webhook_configs:
-  - url: 'https://outlook.office.com/webhook/d722f014-f51d-412a-8d33-6ad676145ae2@ddacce4a-f736-45e1-9c8c-efbe236c4706/IncomingWebhook/f22af8fc0baf4e78abf6e8a7895973af/c0de56fe-5b14-4ff5-9925-3e728dd8f1b0'
+  - url: prom2teams:8089/v2/https://outlook.office.com/webhook/d722f014-f51d-412a-8d33-6ad676145ae2@ddacce4a-f736-45e1-9c8c-efbe236c4706/IncomingWebhook/b80b7f79bfb94368968dd79f82042b53/c0de56fe-5b14-4ff5-9925-3e728dd8f1b0
     send_resolved: true
-
-# - url: 'http://prometheus-teams:2000/alertmanager'
-
 
 ### IF YOU WANT USE SLACK, UNCOMMENT THE LINES BELLOW AND COMMENT THE LINES ABOVE
 ### REMEMBER, IF YOU WANT USE SLACK, YOU DON'T NEED THE MONGO AND ROCKETCHAT SERVICES, SO YOU CAN REMOVE THIS SERVICES FROM docker-compose FILE.
