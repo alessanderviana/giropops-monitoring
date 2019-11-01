@@ -6,7 +6,7 @@ route:
   repeat_interval: 30s
   group_interval: 30s
   group_wait: 2s
-  receiver: 'prometheus-teams'
+  receiver: 'prom2teams'
 
 receivers:
 - name: 'prom2teams'
