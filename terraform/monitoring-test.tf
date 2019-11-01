@@ -34,6 +34,13 @@ resource "aws_security_group" "sg-monitoring-test" {
   }
 
   ingress {
+    from_port       = 8089
+    to_port         = 8089
+    protocol        = "tcp"
+    cidr_blocks     = ["10.63.116.0/24"]
+  }
+
+  ingress {
     from_port       = 9090
     to_port         = 9090
     protocol        = "tcp"
