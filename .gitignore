@@ -1,0 +1,8 @@
+# terraform
+.terraform
+*.tfplan
+terraform/credentials/aws
+
+# docker
+fetchers/binlog_fetcher/docker-compose.yaml
+
