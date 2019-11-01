@@ -79,7 +79,7 @@ echo "INSTALL DOCKER-COMPOSE"
 curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 echo "CLONE REPO"
-cd /root && git clone https://github.com/alessanderviana/giropops-monitoring.git
+cd /root && git clone -b test-blackbox-exporter https://github.com/alessanderviana/giropops-monitoring.git
 echo "UPDATE O.S."
 apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -o Dpkg::Options::="--force-confdef"
 SCRIPT
